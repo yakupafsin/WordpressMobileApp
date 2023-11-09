@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
 
       - name: Lint JavaScript and Typescript with ESLint
-        run: npm run lint
+        run: npx eslint --fix .
 
       - name: Verify there's no Prettier diff
         run: |
