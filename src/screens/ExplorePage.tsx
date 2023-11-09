@@ -11,7 +11,7 @@ const ExplorePage = ({ sampleData }) => {
 };
 
 const mapStateToProps = (state) => ({
-  sampleData: state.sampleReducer.sampleData,
+  posts: state.posts.posts,
 });
 
 export default connect(mapStateToProps)(ExplorePage);
