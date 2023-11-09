@@ -20,8 +20,6 @@ jobs:
 
       - name: Lint JavaScript and Typescript with ESLint
         run: npm run lint
-        env:
-          CI: true
 
       - name: Verify there's no Prettier diff
         run: |
