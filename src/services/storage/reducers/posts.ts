@@ -2,7 +2,7 @@ import {
   FETCH_POSTS_REQUEST,
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_FAILURE,
-} from '../actions/posts';
+} from "../actions/posts";
 
 const initialState = {
   posts: [],
