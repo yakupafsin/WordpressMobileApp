@@ -10,6 +10,7 @@ export const fetchPosts = () => async (dispatch) => {
 
   try {
     const posts = await api.get("/posts");
+    
     dispatch({ type: FETCH_POSTS_SUCCESS, payload: posts });
   } catch (error) {
     dispatch({ type: FETCH_POSTS_FAILURE, payload: error.message });
