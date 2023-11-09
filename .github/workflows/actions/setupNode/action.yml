@@ -1,0 +1,27 @@
+name: Set up Node
+description: Set up Node
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516
+      with:
+        node-version-file: '.nvmrc'
+        cache: npm
+        cache-dependency-path: |
+          package-lock.json
+
+    - id: cache-node-modules
+      uses: actions/cache@v3
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('package-lock.json') }}
+
+
+    - name: Install root project node packages
+      if: steps.cache-node-modules.outputs.cache-hit != 'true'
+      uses: nick-fields/retry@v2
+      with:
+        timeout_minutes: 30
+        max_attempts: 3
+        command: npm ci
