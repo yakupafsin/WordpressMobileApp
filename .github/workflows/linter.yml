@@ -1,0 +1,33 @@
+name: PR Lint
+
+on:
+  pull_request:
+    # By default, a workflow only runs when a pull_request's activity type is opened, synchronize, or reopened. We
+    # explicity override here so that PR titles are re-linted when the PR text content is edited.
+    #
+    # Possible values: https://help.github.com/en/actions/reference/events-that-trigger-workflows#pull-request-event-pull_request
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  pr-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: morrisoncole/pr-lint-action@v1.7.0
+        with:
+          # Note: if you have branch protection rules enabled, the `GITHUB_TOKEN` permissions
+          # won't cover dismissing reviews. Your options are to pass in a custom token
+          # (perhaps by creating some sort of 'service' user and creating a personal access
+          # token with the correct permissions) or to turn off `on-failed-regex-request-changes`
+          # and use action failure to prevent merges instead (with
+          # `on-failed-regex-fail-action: true`). See:
+          # https://docs.github.com/en/actions/security-guides/automatic-token-authentication#permissions-for-the-github_token
+          # https://docs.github.com/en/rest/pulls/reviews#dismiss-a-review-for-a-pull-request
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          title-regex: "#[eE][xX]-[0-9]+"
+          on-failed-regex-fail-action: false
+          on-failed-regex-create-review: true
+          on-failed-regex-request-changes: false
+          on-failed-regex-comment:
+            "This is just an example. Failed regex: `%regex%`!"
+          on-succeeded-regex-dismiss-review-comment:
+            "This is just an example. Success!"
