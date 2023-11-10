@@ -1,8 +1,16 @@
+// ExplorePage.tsx
+import React, { useEffect } from "react";
 import { View, Text } from "react-native";
-import { connect } from "react-redux";
 
-const ExplorePage = ({ sampleData }) => {
-  // Access someData from Redux state
+import { usePosts } from "../services/storage/hooks/usePosts"; // Adjust the import path based on your project structure
+
+const ExplorePage: React.FC = () => {
+  const { posts, loading, error } = usePosts();
+  console.log(posts);
+  useEffect(() => {
+    // Do something with posts, loading, error
+  }, [posts, loading, error]);
+
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text>Home!</Text>
@@ -10,8 +18,4 @@ const ExplorePage = ({ sampleData }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  posts: state.posts.posts,
-});
-
-export default connect(mapStateToProps)(ExplorePage);
+export default ExplorePage;
