@@ -1,8 +1,15 @@
-import { createStore, applyMiddleware } from "redux";
-import thunk from "redux-thunk"; // Use for handling asynchronous actions
+// storage/store.ts
+import { createStore, applyMiddleware, Store } from "redux";
+import thunk, { ThunkDispatch } from "redux-thunk";
 
-import rootReducer from "./reducers"; // Create reducers in the next step
+import rootReducer, { RootState } from "./reducers";
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+// Define the store type
+export type AppStore = Store<RootState>;
+
+// Define the dispatch type
+export type AppDispatch = ThunkDispatch<RootState, void, any>;
+
+const store: AppStore = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
