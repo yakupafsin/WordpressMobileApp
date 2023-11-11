@@ -31,10 +31,14 @@ To install and run Wordpress Mobile App, follow these steps:
 
 ## Contributing
 We welcome contributions from the community. If you'd like to contribute to Wordpress Mobile App, please follow these guidelines:
+
 - Fork the repository.
 - Create a new branch for your feature or bug fix.
 - Make your changes and test them thoroughly.
 - Submit a pull request with a clear description of your changes.
+
+For more details, please check our [Contribution Guidelines](CONTRIBUTING.md).
+
 
 ## License
 Wordpress Mobile App is open-source and released under the MIT License. See the [LICENSE](LICENSE) file for details.
