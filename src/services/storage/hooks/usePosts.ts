@@ -1,11 +1,9 @@
-// hooks/usePosts.ts
+import { fetchPosts } from "@storage/actions/posts";
+import { RootState } from "@storage/reducers";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
-
-import { RootState } from "../../storage/reducers";
-import { fetchPosts, PostsActionTypes } from "../actions/posts";
 
 // Define the type for the custom dispatch function
 type ThunkAppDispatch = ThunkDispatch<RootState, void, Action>;
