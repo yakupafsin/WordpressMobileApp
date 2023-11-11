@@ -1,9 +1,8 @@
-// reducers/posts.ts
 import {
   FETCH_POSTS_REQUEST,
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_FAILURE,
-} from "../actions/posts";
+} from "../actions/actionTypes";
 
 // State type
 export interface PostsState {
