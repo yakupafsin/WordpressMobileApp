@@ -1,15 +1,9 @@
+import { PostsState } from "./types";
 import {
   FETCH_POSTS_REQUEST,
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_FAILURE,
 } from "../actions/actionTypes";
-
-// State type
-export interface PostsState {
-  posts: any[]; // Update the type of posts as needed
-  loading: boolean;
-  error: string | null;
-}
 
 // Action type
 export type PostsAction =
