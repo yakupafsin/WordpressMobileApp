@@ -1,8 +1,8 @@
-// src/api/api.ts
+import { API_BASE_URL } from "@utils/constants";
 import axios, { AxiosResponse } from "axios";
 
 const api = axios.create({
-  baseURL: "https://www.muhendisarsivi.com//wp-json/wp/v2", // Replace with your actual URL
+  baseURL: API_BASE_URL, // Replace with your actual URL
 });
 
 const handleRequest = async <T>(request: Promise<AxiosResponse<T>>) => {
