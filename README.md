@@ -14,6 +14,10 @@ Wordpress Mobile App is a mobile application developed with Expo and React Nativ
 - Access and read WordPress posts and pages.
 - Intuitive navigation for a seamless reading experience.
 
+## Screenshots
+![WhatsApp Image 2023-11-11 at 16 27 53](https://github.com/yakupafsin/WordpressMobileApp/assets/66640310/40935756-d5db-46c4-930d-38a0b08aeb38)
+
+
 ## Installation
 To install and run Wordpress Mobile App, follow these steps:
 1. Clone this repository.
