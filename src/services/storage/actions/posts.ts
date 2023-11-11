@@ -1,12 +1,11 @@
-// src/actions/posts.ts
+import * as api from "@api/wordpressApi";
 import { Dispatch } from "redux";
 
-import * as api from "../../api/wordpressApi";
-
-// Action types
-export const FETCH_POSTS_REQUEST = "FETCH_POSTS_REQUEST";
-export const FETCH_POSTS_SUCCESS = "FETCH_POSTS_SUCCESS";
-export const FETCH_POSTS_FAILURE = "FETCH_POSTS_FAILURE";
+import {
+  FETCH_POSTS_FAILURE,
+  FETCH_POSTS_REQUEST,
+  FETCH_POSTS_SUCCESS,
+} from "./actionTypes";
 
 // Action creators
 interface FetchPostsRequestAction {
@@ -36,7 +35,7 @@ export const fetchPosts =
     try {
       const posts = await api.get("/posts");
       dispatch({ type: FETCH_POSTS_SUCCESS, payload: [posts] });
-    } catch (error) {
+    } catch (error: any) {
       dispatch({ type: FETCH_POSTS_FAILURE, payload: error.message });
     }
   };

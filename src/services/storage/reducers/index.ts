@@ -1,4 +1,3 @@
-// reducers/index.ts
 import { combineReducers, Reducer } from "redux";
 
 import postsReducer, { PostsState } from "./posts";

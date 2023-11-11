@@ -1,8 +1,6 @@
-// ExplorePage.tsx
+import { usePosts } from "@storage/hooks/usePosts"; // Adjust the import path based on your project structure
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
-
-import { usePosts } from "../services/storage/hooks/usePosts"; // Adjust the import path based on your project structure
 
 const ExplorePage: React.FC = () => {
   const { posts, loading, error } = usePosts();
