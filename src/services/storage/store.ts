@@ -1,8 +1,6 @@
-// storage/store.ts
+import rootReducer, { RootState } from "@storage/reducers";
 import { createStore, applyMiddleware, Store } from "redux";
 import thunk, { ThunkDispatch } from "redux-thunk";
-
-import rootReducer, { RootState } from "./reducers";
 
 // Define the store type
 export type AppStore = Store<RootState>;
