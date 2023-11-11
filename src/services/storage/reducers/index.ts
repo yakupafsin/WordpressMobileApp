@@ -1,6 +1,7 @@
 import { combineReducers, Reducer } from "redux";
 
-import postsReducer, { PostsState } from "./posts";
+import postsReducer from "./posts";
+import { PostsState } from "./types";
 
 // Define the type for the combined state
 export interface RootState {
