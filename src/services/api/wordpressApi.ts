@@ -8,7 +8,7 @@ const api = axios.create({
 const handleRequest = async <T>(request: Promise<AxiosResponse<T>>) => {
   try {
     const response = await request;
-    return response.data;
+    return Array.isArray(response.data) ? response.data : [response.data];
   } catch (error) {
     throw error;
   }
