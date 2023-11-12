@@ -28,23 +28,27 @@ export const globalStyles = StyleSheet.create({
 
 export const postStyles = StyleSheet.create({
   container: {
-    marginBottom: 20,
-    marginHorizontal: 10,
-    padding: 10,
+    flexDirection: "row",
+    marginBottom: 10,
+    marginHorizontal: 5,
     borderWidth: 1,
     borderColor: "#ddd",
+    backgroundColor: "#ddd",
     borderRadius: 8,
+    padding: 10,
+  },
+  subContainer: {
+    width: "70%",
+    paddingHorizontal: 10,
   },
   image: {
-    width: "100%",
-    height: 200,
-    borderRadius: 8,
-    marginBottom: 10,
+    width: "30%",
+    height: 100,
+    alignSelf: "center",
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "bold",
-    marginBottom: 5,
   },
   excerpt: {
     fontSize: 16,

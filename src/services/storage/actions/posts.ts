@@ -33,7 +33,9 @@ export const fetchPosts =
     dispatch({ type: FETCH_POSTS_REQUEST });
 
     try {
-      const posts = await api.get("posts");
+      const posts = await api.get(
+        "posts?_fields=author,id,excerpt,title,jetpack_featured_media_url",
+      );
       dispatch({ type: FETCH_POSTS_SUCCESS, payload: posts });
     } catch (error: any) {
       dispatch({ type: FETCH_POSTS_FAILURE, payload: error.message });

@@ -10,17 +10,19 @@ const WordPressPost: React.FC<WordPressPostProps> = ({
   excerpt,
 }) => {
   const defaultTextProps = {
-    numberOfLines: 4,
+    numberOfLines: 2,
   };
   return (
     <View style={postStyles.container}>
       <Image source={{ uri: imageUrl }} style={postStyles.image} />
-      <Text style={postStyles.title}>{title}</Text>
-      <HTMLRenderer
-        tagsStyles={htmlTagStyles.tagStyles}
-        htmlContent={excerpt}
-        defaultTextProps={defaultTextProps}
-      />
+      <View style={postStyles.subContainer}>
+        <Text style={postStyles.title}>{title}</Text>
+        <HTMLRenderer
+          tagsStyles={htmlTagStyles.tagStyles}
+          htmlContent={excerpt}
+          defaultTextProps={defaultTextProps}
+        />
+      </View>
     </View>
   );
 };
