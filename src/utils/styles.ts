@@ -15,6 +15,9 @@ export const globalStyles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
+  scrollViewContainer: {
+    marginTop: 20,
+  },
   titleText: {
     fontSize: 24,
     fontWeight: "bold",
@@ -28,26 +31,54 @@ export const globalStyles = StyleSheet.create({
 
 export const postStyles = StyleSheet.create({
   container: {
-    marginBottom: 20,
-    marginHorizontal: 10,
-    padding: 10,
+    flexDirection: "row",
+    marginBottom: 10,
+    marginHorizontal: 5,
     borderWidth: 1,
     borderColor: "#ddd",
+    backgroundColor: "#ddd",
     borderRadius: 8,
+    padding: 10,
+  },
+  subContainer: {
+    width: "70%",
+    paddingHorizontal: 10,
   },
   image: {
-    width: "100%",
-    height: 200,
-    borderRadius: 8,
-    marginBottom: 10,
+    width: "30%",
+    height: 100,
+    alignSelf: "center",
   },
   title: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: "bold",
-    marginBottom: 5,
   },
   excerpt: {
     fontSize: 16,
+  },
+});
+
+export const imageCarouselStyle = StyleSheet.create({
+  wrapper: {
+    height: 200,
+  },
+  imageBackground: {
+    flex: 1,
+    height: 200,
+    justifyContent: "center",
+  },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust the alpha value for the darkness
+    justifyContent: "center",
+    alignItems: "center",
+    height: 200,
+  },
+  title: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 20,
   },
 });
 
