@@ -15,6 +15,9 @@ export const globalStyles = StyleSheet.create({
     padding: 20,
     backgroundColor: "#fff",
   },
+  scrollViewContainer: {
+    marginTop: 20,
+  },
   titleText: {
     fontSize: 24,
     fontWeight: "bold",
@@ -52,6 +55,30 @@ export const postStyles = StyleSheet.create({
   },
   excerpt: {
     fontSize: 16,
+  },
+});
+
+export const imageCarouselStyle = StyleSheet.create({
+  wrapper: {
+    height: 200,
+  },
+  imageBackground: {
+    flex: 1,
+    height: 200,
+    justifyContent: "center",
+  },
+  overlay: {
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Adjust the alpha value for the darkness
+    justifyContent: "center",
+    alignItems: "center",
+    height: 200,
+  },
+  title: {
+    color: "#fff",
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    margin: 20,
   },
 });
 
